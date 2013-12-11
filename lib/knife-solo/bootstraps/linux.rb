@@ -111,6 +111,8 @@ module KnifeSolo::Bootstraps
         {:type => "emerge_gem"}
       when %r{Arch Linux \\r \(\\l\)}
         {:type => "yaourt"}
+      when %r{Oracle Linux Server}
+        {:type => "yum_omnibus"}
       else
         raise "Distribution not recognized. Please run again with `-VV` option and file an issue: https://github.com/matschaffer/knife-solo/issues"
       end
